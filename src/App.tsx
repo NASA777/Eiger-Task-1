@@ -1,4 +1,5 @@
 import { useState, ChangeEvent, useRef } from "react";
+import Result from "./container/Result/Result";
 import { commonPrefix, onlyLetters } from "./utils/functions";
 import css from "./App.module.css";
 
@@ -45,18 +46,8 @@ const App: React.FC = () => {
                         Clean
                     </button>
                 </div>
-                <div className={css.listContainer}>
-                    <h3>Number of test cases {list.length}.</h3>
-                    <ul className={css.list}>
-                        {list.map((item, index) => (
-                            <li key={index}>
-                                <div>
-                                    {item[0]}: {JSON.stringify(item[1])} = {item[2]}
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+
+                <Result list={list} />
             </div>
         </>
     );
